@@ -22,14 +22,14 @@ def create_data_files(project_name, base_url):
 
 # Create a new file
 def write_file(path, data):
-    f = open(path, 'w')
+    f = open(path, 'w', encoding="utf-8")
     f.write(data)
     f.close()
 
 
 # Add data onto an existing file
 def append_to_file(path, data):
-    with open(path, 'a') as file:
+    with open(path, 'a', encoding="utf-8") as file:
         file.write(data + '\n')
 
 
@@ -42,7 +42,7 @@ def delete_file_contents(path):
 # Read a file and convert each line to set items
 def file_to_set(file_name):
     results = set()
-    with open(file_name, 'rt') as f:
+    with open(file_name, 'rt', encoding="utf-8") as f:
         for line in f:
             results.add(line.replace('\n', ''))
 
